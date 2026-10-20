@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Emi Beauty Studio — Salón de belleza en Zaragoza</title>
+<meta name="description" content="Emi Beauty Studio, salón de belleza en Calle Mariano Royo Urieta 2, Zaragoza. Manicura y pedicura, uñas de gel, lifting y extensiones de pestañas, microblading, facial y bronceado. 4,98 en Booksy y 5,0 en Google.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400;1,9..144,600&family=Great+Vibes&family=Nunito+Sans:opsz,wght@6..12,400;6..12,600;6..12,700;6..12,800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --crema: #fffaf7;
+    --rubor: #fbecec;
+    --rosa: #d98a9a;
+    --rosa-osc: #b45f78;
+    --lila: #8e6cb5;
+    --lila-claro: #efe8f7;
+    --ciruela: #3a2340;
+    --oro: #c9a46a;
+    --neon: #ff3ea5;
+    --texto: #3d2f38;
+    --suave: #7d6b75;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Nunito Sans', sans-serif; background: var(--crema); color: var(--texto); line-height: 1.7; overflow-x: hidden; }
+  h1, h2, h3 { font-family: 'Fraunces', serif; font-weight: 400; line-height: 1.12; color: var(--ciruela); }
+  h1 em, h2 em { color: var(--rosa-osc); }
+  a { color: inherit; text-decoration: none; }
+  img { max-width: 100%; display: block; }
+  .script { font-family: 'Great Vibes', cursive; color: var(--rosa-osc); font-size: 2.2rem; line-height: 1; display: block; margin-bottom: 6px; }
+  .eti { font-size: .76rem; font-weight: 800; letter-spacing: 3px; text-transform: uppercase; color: var(--lila); display: block; margin-bottom: 12px; }
+
+  /* Cabecera */
+  header {
+    position: fixed; inset: 0 0 auto 0; z-index: 100; background: rgba(255,250,247,.93); backdrop-filter: blur(10px);
+    display: flex; align-items: center; justify-content: space-between; padding: 10px 5%;
+    border-bottom: 1px solid rgba(217,138,154,.25);
+  }
+  .marca { display: flex; align-items: center; gap: 12px; }
+  .marca img { width: 50px; height: 50px; border-radius: 50%; box-shadow: 0 0 0 2px var(--oro); }
+  .marca span { font-family: 'Fraunces', serif; font-size: 1.3rem; color: var(--ciruela); line-height: 1.05; }
+  .marca small { display: block; font-family: 'Nunito Sans', sans-serif; font-size: .64rem; font-weight: 800; letter-spacing: 3px; color: var(--rosa-osc); }
+  nav ul { list-style: none; display: flex; gap: 28px; align-items: center; }
+  nav a { font-size: .92rem; font-weight: 600; color: var(--suave); transition: color .2s; }
+  nav a:hover { color: var(--rosa-osc); }
+  nav .nav-cta { background: var(--rosa-osc); color: #fff; padding: 11px 22px; border-radius: 40px; white-space: nowrap; }
+  nav .nav-cta:hover { background: var(--ciruela); color: #fff; }
+
+  /* Portada */
+  .hero { position: relative; overflow: hidden; background: radial-gradient(circle at 85% 20%, #f6d9e0 0, transparent 40%), radial-gradient(circle at 5% 90%, var(--lila-claro) 0, transparent 35%), var(--crema); }
+  .hero-in { display: grid; grid-template-columns: 1.05fr 1fr; gap: 60px; align-items: center; max-width: 1220px; margin: 0 auto; padding: 130px 6% 90px; min-height: 100vh; }
+  .hero h1 { font-size: clamp(2.8rem, 5.3vw, 4.5rem); margin-bottom: 22px; }
+  .hero p { font-size: 1.12rem; color: var(--suave); max-width: 520px; margin-bottom: 32px; }
+  .botones { display: flex; gap: 14px; flex-wrap: wrap; }
+  .btn { display: inline-flex; align-items: center; justify-content: center; gap: 10px; background: var(--rosa-osc); color: #fff; padding: 15px 30px; border-radius: 40px; font-weight: 700; border: 1.5px solid var(--rosa-osc); transition: background .2s, color .2s, border-color .2s; }
+  .btn:hover { background: var(--ciruela); border-color: var(--ciruela); }
+  .btn-linea { background: transparent; color: var(--rosa-osc); }
+  .btn-linea:hover { color: #fff; }
+  .btn svg { width: 18px; height: 18px; fill: currentColor; }
+  .datos { display: flex; gap: 34px; margin-top: 44px; flex-wrap: wrap; }
+  .datos b { display: block; font-family: 'Fraunces', serif; font-size: 2.3rem; font-weight: 600; color: var(--ciruela); line-height: 1; }
+  .datos span { font-size: .82rem; color: var(--suave); }
+  .hero-foto { position: relative; }
+  .hero-foto > .foto-principal { width: 100%; aspect-ratio: 4/4.6; object-fit: cover; border-radius: 260px 260px 24px 24px; box-shadow: 0 30px 60px rgba(58,35,64,.15); }
+  .hero-foto .hero-logo { position: absolute; object-fit: cover; left: -46px; bottom: 30px; width: 170px; height: 170px; border-radius: 50%; border: 6px solid var(--crema); box-shadow: 0 0 0 2px var(--oro), 0 18px 40px rgba(58,35,64,.2); }
+
+  /* Franja neón */
+  .neon { background: var(--ciruela); overflow: hidden; white-space: nowrap; padding: 16px 0; }
+  .neon div { display: inline-flex; gap: 36px; animation: correr 32s linear infinite; font-family: 'Great Vibes', cursive; font-size: 2rem; color: #ffd1e8; text-shadow: 0 0 6px var(--neon), 0 0 16px var(--neon); }
+  .neon span::after { content: "♡"; margin-left: 36px; font-family: sans-serif; font-size: 1.1rem; }
+  @keyframes correr { to { transform: translateX(-50%); } }
+
+  section { padding: 100px 6%; max-width: 1220px; margin: 0 auto; }
+  .cabecera { text-align: center; max-width: 660px; margin: 0 auto 54px; }
+  .titulo { font-size: clamp(2.2rem, 4.2vw, 3.4rem); margin-bottom: 14px; }
+  .cabecera p { color: var(--suave); }
+
+  /* Nosotras */
+  .nosotras { display: grid; grid-template-columns: 1fr 1.15fr; gap: 70px; align-items: center; }
+  .nosotras .foto { position: relative; }
+  .nosotras .foto img:first-child { width: 86%; aspect-ratio: 3/4; object-fit: cover; border-radius: 22px; }
+  .nosotras .foto img:last-child { position: absolute; right: 0; bottom: -30px; width: 46%; aspect-ratio: 1; object-fit: cover; border-radius: 50%; border: 8px solid var(--crema); }
+  .nosotras p { color: var(--suave); font-size: 1.06rem; margin-bottom: 16px; }
+  .equipo { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin: 24px 0; }
+  .equipo div { background: var(--rubor); border-radius: 18px; padding: 18px 10px; text-align: center; }
+  .equipo b { display: block; font-family: 'Fraunces', serif; font-size: 1.45rem; font-weight: 600; color: var(--ciruela); }
+  .equipo span { font-size: .8rem; color: var(--suave); }
+  .sellos { display: flex; flex-wrap: wrap; gap: 8px; }
+  .sellos span { border: 1px solid rgba(201,164,106,.6); border-radius: 30px; padding: 6px 14px; font-size: .86rem; }
+  .sellos span::before { content: "✓ "; color: var(--oro); font-weight: 800; }
+
+  /* Servicios */
+  .rubor { background: var(--rubor); }
+  .cartas { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+  .carta { background: #fff; border-radius: 22px; padding: 30px 26px 20px; box-shadow: 0 10px 30px rgba(180,95,120,.08); }
+  .carta .icono { font-size: 1.6rem; margin-bottom: 6px; }
+  .carta h3 { font-size: 1.55rem; margin-bottom: 10px; }
+  .serv { display: flex; justify-content: space-between; gap: 14px; padding: 9px 0; border-bottom: 1px dashed #efd3d9; font-size: .96rem; }
+  .serv:last-child { border-bottom: 0; }
+  .serv b { color: var(--rosa-osc); font-weight: 800; white-space: nowrap; }
+  .carta.oscura { background: var(--ciruela); color: #f4e6ee; }
+  .carta.oscura h3 { color: #fff; }
+  .carta.oscura .serv { border-color: rgba(255,255,255,.15); }
+  .carta.oscura .serv b { color: #ffb6d6; }
+  .nota-serv { text-align: center; color: var(--suave); font-size: .92rem; margin-top: 28px; }
+
+  /* Micropigmentación */
+  .micro { display: grid; grid-template-columns: 1fr 1.1fr; gap: 60px; align-items: center; }
+  .micro-fotos { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+  .micro-fotos img { width: 100%; aspect-ratio: 3/4.4; object-fit: cover; border-radius: 20px; }
+  .micro-fotos img:last-child { margin-top: 40px; }
+  .micro p { color: var(--suave); font-size: 1.06rem; margin-bottom: 18px; }
+  .precios-micro { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 22px 0 26px; }
+  .precios-micro div { background: var(--lila-claro); border-radius: 16px; padding: 16px 18px; }
+  .precios-micro b { display: block; font-family: 'Fraunces', serif; font-size: 1.5rem; color: var(--lila); font-weight: 600; }
+  .precios-micro span { font-size: .9rem; }
+  .cita { border-left: 4px solid var(--rosa); background: #fff; border-radius: 14px; padding: 18px 22px; margin-bottom: 26px; font-family: 'Fraunces', serif; font-style: italic; font-size: 1.12rem; color: var(--ciruela); line-height: 1.5; }
+  .cita cite { display: block; margin-top: 8px; font-family: 'Nunito Sans', sans-serif; font-style: normal; font-size: .85rem; color: var(--suave); }
+
+  /* Trabajos */
+  .lila { background: var(--lila-claro); }
+  .galeria { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
+  .galeria img { width: 100%; aspect-ratio: 1; object-fit: cover; border-radius: 18px; transition: transform .3s; }
+  .galeria img:hover { transform: scale(1.03); }
+  .temporada { margin-top: 30px; display: grid; grid-template-columns: 300px 1fr; gap: 30px; align-items: center; background: var(--ciruela); color: #f4e6ee; border-radius: 24px; overflow: hidden; }
+  .temporada img { width: 100%; height: 100%; object-fit: cover; aspect-ratio: 4/3.4; }
+  .temporada div { padding: 26px 30px 26px 0; }
+  .temporada h3 { color: #fff; font-size: 1.8rem; margin-bottom: 8px; }
+  .temporada p { margin-bottom: 18px; }
+  .temporada .btn { background: var(--neon); border-color: var(--neon); }
+  .temporada .btn:hover { background: #fff; color: var(--ciruela); border-color: #fff; }
+
+  /* Estudio */
+  .estudio { display: grid; grid-template-columns: 1.3fr 1fr 1fr; grid-template-rows: 250px 250px; gap: 14px; }
+  .estudio img { width: 100%; height: 100%; object-fit: cover; border-radius: 18px; }
+  .estudio img:first-child { grid-row: span 2; }
+
+  /* Opiniones */
+  .opiniones { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+  .op { background: #fff; border-radius: 22px; padding: 30px 26px; border-top: 4px solid var(--rosa); box-shadow: 0 10px 30px rgba(180,95,120,.07); }
+  .op .est { color: var(--oro); letter-spacing: 3px; margin-bottom: 10px; }
+  .op p { font-family: 'Fraunces', serif; font-size: 1.1rem; line-height: 1.5; color: var(--ciruela); margin-bottom: 14px; }
+  .op cite { font-style: normal; font-size: .85rem; color: var(--suave); }
+
+  /* Ubicación */
+  .ubicacion { display: grid; grid-template-columns: 1fr 1.3fr; gap: 26px; }
+  .datos-local { background: #fff; border-radius: 24px; padding: 34px 32px; box-shadow: 0 10px 30px rgba(180,95,120,.07); }
+  .horario { width: 100%; border-collapse: collapse; margin-bottom: 22px; }
+  .horario td { padding: 10px 0; border-bottom: 1px solid var(--rubor); }
+  .horario td:first-child { font-weight: 700; }
+  .horario td:last-child { text-align: right; color: var(--suave); }
+  .horario tr.cerrado td:last-child { color: #b9a9b2; }
+  .horario tr.hoy td { color: var(--rosa-osc); }
+  .contacto { display: grid; gap: 12px; }
+  .contacto a { display: flex; gap: 12px; align-items: center; }
+  .contacto a:hover { color: var(--rosa-osc); }
+  .contacto svg { width: 20px; height: 20px; fill: var(--rosa-osc); flex-shrink: 0; }
+  .mapa-caja { position: relative; border-radius: 24px; overflow: hidden; min-height: 470px; background: var(--rubor); box-shadow: 0 10px 30px rgba(180,95,120,.1); }
+  .mapa-caja iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+  .mapa-botones { position: absolute; left: 14px; right: 14px; bottom: 14px; display: flex; gap: 10px; flex-wrap: wrap; pointer-events: none; }
+  .mapa-botones .btn { pointer-events: auto; box-shadow: 0 8px 22px rgba(0,0,0,.2); padding: 12px 22px; font-size: .9rem; }
+  .mapa-botones .btn-linea { background: #fff; border-color: #fff; color: var(--ciruela); }
+  .mapa-botones .btn-linea:hover { background: var(--ciruela); border-color: var(--ciruela); color: #fff; }
+
+  /* Final */
+  .cta { position: relative; text-align: center; padding: 120px 6%; overflow: hidden; }
+  .cta > img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+  .cta::after { content: ""; position: absolute; inset: 0; background: rgba(58,35,64,.8); }
+  .cta > div { position: relative; z-index: 2; color: #fff; }
+  .cta .script { color: #ffd1e8; text-shadow: 0 0 8px var(--neon); font-size: 2.6rem; }
+  .cta h2 { color: #fff; font-size: clamp(2.4rem, 5vw, 3.8rem); margin-bottom: 14px; }
+  .cta p { color: #f0dce7; margin-bottom: 30px; }
+  .cta .botones { justify-content: center; }
+  .cta .btn { background: #fff; color: var(--ciruela); border-color: #fff; }
+  .cta .btn:hover { background: var(--neon); border-color: var(--neon); color: #fff; }
+  .cta .btn-linea { background: transparent; color: #fff; }
+
+  footer { background: #2a1830; color: #c9b3c2; text-align: center; padding: 24px 6%; font-size: .85rem; }
+  footer a { color: #ffb6d6; }
+
+  .wa-flotante { position: fixed; right: 22px; bottom: 22px; z-index: 120; width: 58px; height: 58px; border-radius: 50%; background: #25d366; display: grid; place-items: center; box-shadow: 0 10px 25px rgba(0,0,0,.2); }
+  .wa-flotante svg { width: 30px; height: 30px; fill: #fff; }
+
+  @media (max-width: 920px) {
+    nav ul li:not(:last-child) { display: none; }
+    .marca img { width: 42px; height: 42px; }
+    .marca span { font-size: 1.1rem; }
+    .hero-in { grid-template-columns: 1fr; gap: 50px; padding: 110px 6% 80px; min-height: 0; }
+    .hero-foto .hero-logo { left: 12px; bottom: -30px; width: 120px; height: 120px; }
+    .botones .btn { flex: 1 1 100%; }
+    .datos { gap: 22px; }
+    .datos b { font-size: 1.9rem; }
+    .nosotras, .micro, .ubicacion { grid-template-columns: 1fr; gap: 44px; }
+    .nosotras .foto { margin-bottom: 30px; }
+    .cartas, .opiniones { grid-template-columns: 1fr; }
+    .galeria { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+    .temporada { grid-template-columns: 1fr; gap: 0; }
+    .temporada div { padding: 24px 22px 26px; }
+    .estudio { grid-template-columns: 1fr 1fr; grid-template-rows: 260px 160px 160px; gap: 10px; }
+    .estudio img:first-child { grid-row: auto; grid-column: span 2; }
+    .datos-local { padding: 28px 22px; }
+    .mapa-caja { min-height: 420px; }
+    section { padding: 76px 6%; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <a class="marca" href="#inicio"><img src="img/logo.jpg" alt="Logo de Emi Beauty Studio"><span>Emi Beauty Studio<small>SALÓN DE BELLEZA</small></span></a>
+  <nav>
+    <ul>
+      <li><a href="#nosotras">Nosotras</a></li>
+      <li><a href="#servicios">Servicios</a></li>
+      <li><a href="#trabajos">Trabajos</a></li>
+      <li><a href="#ubicacion">Dónde estamos</a></li>
+      <li><a class="nav-cta" href="https://wa.me/34666461773" target="_blank" rel="noopener">Pedir cita</a></li>
+    </ul>
+  </nav>
+</header>
+
+<div class="hero" id="inicio">
+  <div class="hero-in">
+    <div>
+      <span class="script">Salón de belleza en Zaragoza</span>
+      <h1>Uñas, mirada y piel <em>en las mejores manos</em></h1>
+      <p>Manicura y pedicura, uñas de gel, pestañas, microblading, tratamientos faciales y bronceado. Un espacio céntrico, bonito y con muy buenas vibras, donde salir siempre encantada.</p>
+      <div class="botones">
+        <a class="btn" href="https://wa.me/34666461773" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.5 14.2c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7-2.8-1.1-4.6-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.9s.7-2.1 1-2.4c.3-.3.6-.3.8-.3h.6c.2 0 .4 0 .6.5l.9 2.1c.1.2.1.4 0 .5l-.3.5-.4.4c-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.3 2.4 1.5.3.1.5.1.6-.1l.9-1c.2-.3.4-.2.6-.1l2 .9c.3.1.5.2.5.3.1.1.1.6-.1 1.1z"/></svg>Pedir cita por WhatsApp</a>
+        <a class="btn btn-linea" href="#servicios">Ver servicios</a>
+      </div>
+      <div class="datos">
+        <div><b>4,98★</b><span>99 reseñas en Booksy</span></div>
+        <div><b>5,0★</b><span>En Google</span></div>
+        <div><b>3</b><span>Profesionales</span></div>
+      </div>
+    </div>
+    <div class="hero-foto">
+      <img class="foto-principal" src="img/local-1.jpg" alt="Zona de espera de Emi Beauty Studio con el neón Good vibes">
+      <img class="hero-logo" src="img/logo.jpg" alt="Logo de Emi Beauty Studio">
+    </div>
+  </div>
+</div>
+
+<div class="neon" aria-hidden="true"><div>
+  <span>good vibes</span><span>manicura</span><span>pestañas</span><span>microblading</span><span>pedicura</span><span>facial</span>
+  <span>good vibes</span><span>manicura</span><span>pestañas</span><span>microblading</span><span>pedicura</span><span>facial</span>
+</div></div>
+
+<section id="nosotras">
+  <div class="nosotras">
+    <div class="foto">
+      <img src="img/estudio.jpg" alt="En Emi Beauty Studio, junto a la pared de plantas">
+      <img src="img/local-6.jpg" alt="Rincón de espera con plantas">
+    </div>
+    <div>
+      <span class="eti">Nosotras</span>
+      <h2 class="titulo">Profesionales, <em>cercanas y meticulosas</em></h2>
+      <p>En Emi Beauty Studio cuidamos cada detalle: el material, la higiene y, sobre todo, el trato. Te aconsejamos y te orientamos en los diseños para que salgas con justo lo que buscabas.</p>
+      <p>Hay clientas que llevan más de ocho años con Emi. Eso lo dice todo.</p>
+      <div class="equipo">
+        <div><b>Emi</b><span>Esteticista</span></div>
+        <div><b>Andra</b><span>Uñas</span></div>
+        <div><b>Cami</b><span>Uñas</span></div>
+      </div>
+      <div class="sellos"><span>Plaza de aparcamiento</span><span>Pago con tarjeta</span><span>Acceso adaptado</span><span>Mascotas bienvenidas</span><span>Programa de fidelidad</span></div>
+    </div>
+  </div>
+</section>
+
+<div class="rubor">
+<section id="servicios">
+  <div class="cabecera">
+    <span class="script">Nuestra carta</span>
+    <h2 class="titulo">Servicios y precios</h2>
+    <p>Una selección de nuestros servicios. Reserva por WhatsApp o en Booksy, eligiendo profesional y hora.</p>
+  </div>
+  <div class="cartas">
+    <div class="carta">
+      <div class="icono">💅</div>
+      <h3>Manicura</h3>
+      <div class="serv"><span>Semipermanente básica</span><b>19 €</b></div>
+      <div class="serv"><span>Semipermanente completa</span><b>24 €</b></div>
+      <div class="serv"><span>Baby boomer</span><b>28 €</b></div>
+      <div class="serv"><span>Completa con esmalte clásico</span><b>16 €</b></div>
+      <div class="serv"><span>Manicura masculina</span><b>20 €</b></div>
+    </div>
+    <div class="carta">
+      <div class="icono">✨</div>
+      <h3>Uñas de gel</h3>
+      <div class="serv"><span>Aplicación</span><b>42 €</b></div>
+      <div class="serv"><span>Aplicación francesa</span><b>42 €</b></div>
+      <div class="serv"><span>Aplicación baby boomer</span><b>45 €</b></div>
+      <div class="serv"><span>Relleno</span><b>38 €</b></div>
+      <div class="serv"><span>Reconstrucción uñas mordidas</span><b>40 €</b></div>
+    </div>
+    <div class="carta">
+      <div class="icono">🌸</div>
+      <h3>Pedicura</h3>
+      <div class="serv"><span>Pedicura básica</span><b>28 €</b></div>
+      <div class="serv"><span>Pedicura completa</span><b>34 €</b></div>
+      <div class="serv"><span>Pedicura Luxury Spa</span><b>42 €</b></div>
+      <div class="serv"><span>Pedicura masculina</span><b>28 €</b></div>
+    </div>
+    <div class="carta">
+      <div class="icono">👁️</div>
+      <h3>Pestañas y cejas</h3>
+      <div class="serv"><span>Lifting de pestañas</span><b>40 €</b></div>
+      <div class="serv"><span>Lifting + depilación de cejas</span><b>49 €</b></div>
+      <div class="serv"><span>Extensiones de pestañas 3D</span><b>55 €</b></div>
+      <div class="serv"><span>Relleno de extensiones</span><b>38 €</b></div>
+      <div class="serv"><span>Depilación y tinte de cejas</span><b>16 €</b></div>
+    </div>
+    <div class="carta oscura">
+      <div class="icono">🖋️</div>
+      <h3>Micropigmentación</h3>
+      <div class="serv"><span>Microblading de cejas</span><b>250 €</b></div>
+      <div class="serv"><span>Sombreado de cejas</span><b>desde 250 €</b></div>
+      <div class="serv"><span>Eyeliner degradado</span><b>99 €</b></div>
+      <div class="serv"><span>Acuarela lips</span><b>129 €</b></div>
+    </div>
+    <div class="carta">
+      <div class="icono">🌿</div>
+      <h3>Facial y cuerpo</h3>
+      <div class="serv"><span>Limpieza facial profunda</span><b>55 €</b></div>
+      <div class="serv"><span>Dermapen facial</span><b>69 €</b></div>
+      <div class="serv"><span>Peeling químico</span><b>66 €</b></div>
+      <div class="serv"><span>Bronceado con caña de azúcar</span><b>40 €</b></div>
+      <div class="serv"><span>Piernas completas a la cera</span><b>21 €</b></div>
+    </div>
+  </div>
+  <p class="nota-serv">Además: bonos de dermapen y de bronceado, depilación con cera, decoraciones de uñas desde 1,50 € y mucho más.</p>
+</section>
+</div>
+
+<section id="micro">
+  <div class="micro">
+    <div class="micro-fotos">
+      <img src="img/microblading.jpg" alt="Sesión de microblading de cejas">
+      <img src="img/micro-resultados.jpg" alt="Resultados de micropigmentación de cejas, ojos y labios">
+    </div>
+    <div>
+      <span class="eti">Micropigmentación</span>
+      <h2 class="titulo">Cejas, ojos y labios <em>perfectos cada mañana</em></h2>
+      <p>Microblading, sombreado de cejas, eyeliner degradado entre pestañas y labios efecto acuarela. Resultados naturales, adaptados a tu cara y con la intensidad que tú elijas.</p>
+      <div class="precios-micro">
+        <div><b>250 €</b><span>Microblading de cejas</span></div>
+        <div><b>129 €</b><span>Acuarela lips</span></div>
+      </div>
+      <div class="cita">“Me hice microblading y extensiones de pestañas y quedé encantada con el resultado. Es muy paciente y escucha atentamente lo que quieres. Su espacio está impecable.”<cite>— Rhodas, clienta en Booksy</cite></div>
+      <a class="btn" href="https://wa.me/34666461773" target="_blank" rel="noopener">Pedir información</a>
+    </div>
+  </div>
+</section>
+
+<div class="lila">
+<section id="trabajos">
+  <div class="cabecera">
+    <span class="script">Nuestros trabajos</span>
+    <h2 class="titulo">Uñas que <em>duran y enamoran</em></h2>
+    <p>Pidas lo que pidas, lo hacemos: francesas, baby boomer, frutas, rayas, lunares… y diseños de temporada.</p>
+  </div>
+  <div class="galeria">
+    <img src="img/unas-12.jpg" alt="Uñas con cerezas">
+    <img src="img/unas-3.jpg" alt="Uñas pastel con flores">
+    <img src="img/unas-6.jpg" alt="Uñas rojas con diseño">
+    <img src="img/unas-10.jpg" alt="Francesa rosa degradada">
+    <img src="img/unas-1.jpg" alt="Uñas con frutas">
+    <img src="img/unas-9.jpg" alt="Uñas con rayas">
+    <img src="img/unas-11.jpg" alt="Uñas con lunares">
+    <img src="img/unas-5.jpg" alt="Uñas pastel">
+    <img src="img/unas-7.jpg" alt="Uñas naranjas con dibujos">
+    <img src="img/unas-2.jpg" alt="Uñas con rayas rojas">
+    <img src="img/unas-8.jpg" alt="Uñas rosas con diseño">
+    <img src="img/unas-4.jpg" alt="Uñas coral">
+  </div>
+  <div class="temporada">
+    <img src="img/halloween.jpg" alt="Uñas con diseño de Halloween">
+    <div>
+      <span class="eti" style="color:#ffb6d6;">Diseños de temporada</span>
+      <h3>¿Ya tienes tus uñas de Halloween?</h3>
+      <p>Calabazas, telarañas y fantasmas… Cada temporada preparamos diseños nuevos. Pide el tuyo antes de que se llene la agenda.</p>
+      <a class="btn" href="https://wa.me/34666461773" target="_blank" rel="noopener">Reservar mi diseño</a>
+    </div>
+  </div>
+</section>
+</div>
+
+<section id="estudio">
+  <div class="cabecera">
+    <span class="script">El estudio</span>
+    <h2 class="titulo">Un rincón con <em>good vibes</em></h2>
+    <p>Céntrico, luminoso y cuidado al detalle, con su pared de plantas y sus neones. Te va a encantar quedarte.</p>
+  </div>
+  <div class="estudio">
+    <img src="img/local-2.jpg" alt="Interior de Emi Beauty Studio con pared de plantas y neón">
+    <img src="img/local-5.jpg" alt="Puesto de manicura con esmaltes">
+    <img src="img/local-4.jpg" alt="Mesa de manicura">
+    <img src="img/cabina.jpg" alt="Cabina de tratamientos">
+    <img src="img/local-3.jpg" alt="Entrada al salón">
+  </div>
+</section>
+
+<div class="rubor">
+<section id="opiniones">
+  <div class="cabecera">
+    <span class="script">Opiniones</span>
+    <h2 class="titulo">4,98 de media en Booksy</h2>
+    <p>Y un 5,0 en Google. Esto es lo que dicen nuestras clientas.</p>
+  </div>
+  <div class="opiniones">
+    <div class="op"><div class="est">★★★★★</div><p>“Llevo ya 8 años con Emi haciéndome muchos de los tratamientos que tiene. El sitio donde mejor me han hecho una manicura y pedicura. Es una profesional como la copa de un pino.”</p><cite>— Beatriz, clienta en Booksy</cite></div>
+    <div class="op"><div class="est">★★★★★</div><p>“Emi es una profesional, y las 2 compañeras que tiene también lo son. Ya son casi 5 años yendo a su salón y no la cambio por nadie. Meticulosa, cuidadosa con el material. ¡100% recomendable!”</p><cite>— Noemí, clienta en Booksy</cite></div>
+    <div class="op"><div class="est">★★★★★</div><p>“Soy bastante perfeccionista y Andra dejó mis uñas perfectas. Era mi primera vez en este salón, pero sin duda volveré. El trato fue muy amable y profesional.”</p><cite>— Mihaela, clienta en Booksy</cite></div>
+  </div>
+</section>
+</div>
+
+<section id="ubicacion">
+  <div class="cabecera">
+    <span class="script">Te esperamos</span>
+    <h2 class="titulo">Dónde estamos</h2>
+    <p>En la calle Mariano Royo Urieta, 2 (Zaragoza). Mueve el mapa o pulsa “Cómo llegar” y Google Maps te lleva directo.</p>
+  </div>
+  <div class="ubicacion">
+    <div class="datos-local">
+      <table class="horario" id="horario">
+        <tr data-dia="1"><td>Lunes</td><td>09:15 – 19:45</td></tr>
+        <tr data-dia="2"><td>Martes</td><td>09:15 – 19:45</td></tr>
+        <tr data-dia="3"><td>Miércoles</td><td>09:15 – 19:45</td></tr>
+        <tr data-dia="4"><td>Jueves</td><td>09:15 – 19:45</td></tr>
+        <tr data-dia="5"><td>Viernes</td><td>09:15 – 19:45</td></tr>
+        <tr data-dia="6"><td>Sábado</td><td>10:00 – 14:30</td></tr>
+        <tr data-dia="0" class="cerrado"><td>Domingo</td><td>Cerrado</td></tr>
+      </table>
+      <div class="contacto">
+        <a href="https://maps.google.com/?cid=4164964099565006812" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 0-7 7c0 5.2 7 13 7 13s7-7.8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg>C. Mariano Royo Urieta, 2 · 50006 Zaragoza</a>
+        <a href="tel:+34666461773"><svg viewBox="0 0 24 24"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1l-2.3 2.2z"/></svg>666 46 17 73</a>
+        <a href="https://www.instagram.com/emibeautystudio0/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M12 7a5 5 0 1 0 0 10 5 5 0 0 0 0-10zm0 8.2a3.2 3.2 0 1 1 0-6.4 3.2 3.2 0 0 1 0 6.4zM17.3 5.5a1.2 1.2 0 1 0 0 2.4 1.2 1.2 0 0 0 0-2.4zM12 3.6c2.7 0 3 0 4.1.1 2.7.1 4 1.4 4.1 4.1.1 1.1.1 1.4.1 4.1s0 3-.1 4.1c-.1 2.7-1.4 4-4.1 4.1-1.1.1-1.4.1-4.1.1s-3 0-4.1-.1c-2.7-.1-4-1.4-4.1-4.1C3.7 15 3.6 14.7 3.6 12s0-3 .1-4.1c.1-2.7 1.4-4 4.1-4.1C8.9 3.7 9.3 3.6 12 3.6zM12 2c-2.7 0-3.1 0-4.2.1C4.2 2.3 2.3 4.2 2.1 7.8 2 8.9 2 9.3 2 12s0 3.1.1 4.2c.2 3.6 2.1 5.5 5.7 5.7 1.1.1 1.5.1 4.2.1s3.1 0 4.2-.1c3.6-.2 5.5-2.1 5.7-5.7.1-1.1.1-1.5.1-4.2s0-3.1-.1-4.2c-.2-3.6-2.1-5.5-5.7-5.7C15.1 2 14.7 2 12 2z"/></svg>@emibeautystudio0</a>
+      </div>
+    </div>
+    <div class="mapa-caja">
+      <iframe src="https://maps.google.com/maps?q=Emi%20Beauty%20Studio%2C%20C.%20de%20Mariano%20Royo%2C%202%2C%2050006%20Zaragoza&z=17&hl=es&output=embed" title="Mapa de Emi Beauty Studio en Google Maps" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+      <div class="mapa-botones">
+        <a class="btn" href="https://www.google.com/maps/dir/?api=1&amp;destination=Emi%20Beauty%20Studio%2C%20C.%20de%20Mariano%20Royo%2C%202%2C%2050006%20Zaragoza" target="_blank" rel="noopener">Cómo llegar</a>
+        <a class="btn btn-linea" href="https://maps.google.com/?cid=4164964099565006812" target="_blank" rel="noopener">Abrir en Google Maps ↗</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="cta">
+  <img src="img/local-2.jpg" alt="">
+  <div>
+    <span class="script">good vibes only</span>
+    <h2>Reserva tu momento</h2>
+    <p>Escríbenos por WhatsApp o reserva directamente en Booksy.</p>
+    <div class="botones">
+      <a class="btn" href="https://wa.me/34666461773" target="_blank" rel="noopener">Pedir cita por WhatsApp</a>
+      <a class="btn btn-linea" href="https://booksy.com/es-es/47638_emi-beauty-studio_salon-de-unas_33237_zaragoza" target="_blank" rel="noopener">Reservar en Booksy</a>
+    </div>
+  </div>
+</div>
+
+<footer>© 2026 Emi Beauty Studio · C. Mariano Royo Urieta, 2, Zaragoza · <a href="https://www.instagram.com/emibeautystudio0/" target="_blank" rel="noopener">@emibeautystudio0</a></footer>
+
+<a class="wa-flotante" href="https://wa.me/34666461773" target="_blank" rel="noopener" aria-label="WhatsApp">
+  <svg viewBox="0 0 24 24"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.9 9.9 0 0 0 4.74 1.21h.01c5.46 0 9.91-4.45 9.91-9.91A9.85 9.85 0 0 0 12.04 2zm5.8 14.09c-.24.68-1.43 1.3-1.97 1.35-.5.05-.98.24-3.3-.69-2.79-1.1-4.56-3.95-4.7-4.13-.13-.18-1.12-1.49-1.12-2.85s.71-2.02.97-2.3c.25-.27.55-.34.73-.34h.53c.17 0 .4-.06.62.48.24.56.8 1.94.87 2.08.07.14.12.3.02.48-.09.18-.14.3-.27.46-.14.16-.29.36-.41.48-.14.13-.28.28-.12.55.16.27.71 1.17 1.52 1.89 1.05.93 1.93 1.22 2.2 1.36.27.14.43.12.59-.07.16-.18.68-.79.86-1.06.18-.27.36-.23.6-.14.25.09 1.58.75 1.85.88.27.14.45.2.52.32.07.11.07.66-.17 1.33z"/></svg>
+</a>
+
+<script>
+  // Marca en el horario el día de hoy
+  document.querySelector('#horario tr[data-dia="' + new Date().getDay() + '"]')?.classList.add('hoy');
+</script>
+
+</body>
+</html>
